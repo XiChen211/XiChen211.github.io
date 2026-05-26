@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XiChen — 个人主页</title>
+  <meta name="description" content="XiChen 的个人主页：关于我、技能、经历与联系方式。" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="XiChen — 个人主页" />
+  <meta property="og:description" content="XiChen 的个人主页：关于我、技能、经历与联系方式。" />
+  <meta property="og:locale" content="zh_CN" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="XiChen — 个人主页" />
+  <meta name="twitter:description" content="XiChen 的个人主页：关于我、技能、经历与联系方式。" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Inter"', '"Noto Sans SC"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', '"Fira Code"', 'ui-monospace', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Dark-mode bootstrap (avoid flash) -->
+  <script>
+    (function () {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'dark' || (!stored && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <style>
+    :focus-visible {
+      outline: 2px solid #4f46e5;
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 selection:bg-indigo-600 selection:text-white">
+
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:bg-indigo-600 focus:text-white focus:px-3 focus:py-2 focus:rounded-md">跳转到主要内容</a>
+
+  <!-- ===== Nav ===== -->
+  <header id="site-nav" class="fixed top-0 inset-x-0 z-40 transition-colors duration-300">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#top" class="font-semibold tracking-tight text-base">
+        <span class="inline-flex items-center gap-2">
+          <span class="w-7 h-7 rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 flex items-center justify-center text-xs font-semibold">XC</span>
+          XiChen
+        </span>
+      </a>
+
+      <nav class="hidden sm:flex items-center gap-6 text-sm text-zinc-600 dark:text-zinc-400">
+        <a href="#about" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">关于</a>
+        <a href="#skills" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">技能</a>
+        <a href="#experience" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">经历</a>
+        <a href="#contact" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">联系</a>
+      </nav>
+
+      <button
+        id="theme-toggle"
+        type="button"
+        aria-label="切换主题"
+        class="w-9 h-9 inline-flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-300 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors"
+      >
+        <i class="fa-regular fa-sun text-sm dark:hidden"></i>
+        <i class="fa-regular fa-moon text-sm hidden dark:inline-block"></i>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== Hero ===== -->
+    <section id="top" class="pt-40 pb-24">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+
+        <div class="mb-10">
+          <!-- TODO: 替换为你的头像图片（建议 512x512 圆形或方形 PNG）-->
+          <div class="w-28 h-28 sm:w-32 sm:h-32 mx-auto rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 flex items-center justify-center text-4xl font-semibold tracking-tight shadow-sm">
+            XC
+          </div>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mb-4">
+          你好，我是 <span class="text-indigo-600 dark:text-indigo-400">XiChen</span>
+        </h1>
+        <p class="text-base sm:text-lg text-zinc-500 dark:text-zinc-400 font-light mb-10 max-w-lg mx-auto leading-relaxed">
+          <!-- TODO: 替换为正式的职业一句话定位（如：全栈开发者 / 学生 / 设计师）-->
+          我是游戏高手
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="#contact"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium transition-colors"
+          >
+            <i class="fa-regular fa-envelope text-xs"></i>
+            联系我
+          </a>
+          <a
+            href="https://github.com/XiChen211"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-zinc-200 dark:border-zinc-800 hover:border-zinc-900 dark:hover:border-zinc-300 text-sm font-medium transition-colors"
+          >
+            <i class="fa-brands fa-github text-sm"></i>
+            GitHub
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section id="about" class="py-24 border-t border-zinc-100 dark:border-zinc-900">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="mb-12">
+          <p class="text-xs font-mono uppercase tracking-widest text-indigo-600 dark:text-indigo-400 mb-2">01 — About</p>
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">关于我</h2>
+        </div>
+
+        <div class="space-y-5 text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-2xl">
+          <!-- TODO: 替换为你的个人介绍第一段（开场，你是谁、你做什么）-->
+          <p>
+            我是 XiChen，一名热爱探索与创造的开发者/玩家。喜欢用代码把脑子里有趣的想法变成可以运行的东西，也喜欢在游戏世界里寻找解决问题的另一种角度。
+          </p>
+          <!-- TODO: 替换为第二段（你的兴趣方向、擅长的领域）-->
+          <p>
+            日常关注 Web 开发、工具效率与游戏设计。相信好的产品来源于克制的设计与对细节的执拗，而最有趣的项目往往诞生于一句"试试看会怎样"。
+          </p>
+          <!-- TODO: 替换为第三段（你的态度/目标，可选）-->
+          <p>
+            不在写代码的时候，大概率在打游戏、看番、或者研究一些奇怪的工具流。欢迎一起聊技术、聊游戏、聊任何让生活更有意思的事。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section id="skills" class="py-24 border-t border-zinc-100 dark:border-zinc-900">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="mb-12">
+          <p class="text-xs font-mono uppercase tracking-widest text-indigo-600 dark:text-indigo-400 mb-2">02 — Skills</p>
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">技能</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-4">编程语言</h3>
+            <div class="flex flex-wrap gap-2">
+              <!-- TODO: 替换为你真实掌握的编程语言 -->
+              <span class="px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 text-sm">JavaScript</span>
+              <span class="px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 text-sm">TypeScript</span>
+              <span class="px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 text-sm">Python</span>
+              <span class="px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 text-sm">Java</span>
+              <span class="px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 text-sm">C++</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-4">框架与工具</h3>
+            <div class="flex flex-wrap gap-2">
+              <!-- TODO: 替换为你真实使用的框架与工具 -->
+              <span class="px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 text-sm">React</span>
+              <span class="px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 text-sm">Node.js</span>
+              <span class="px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 text-sm">Tailwind CSS</span>
+              <span class="px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 text-sm">Vite</span>
+              <span class="px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 text-sm">Git</span>
+              <span class="px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 text-sm">Docker</span>
+              <span class="px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 text-sm">Linux</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Experience ===== -->
+    <section id="experience" class="py-24 border-t border-zinc-100 dark:border-zinc-900">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="mb-12">
+          <p class="text-xs font-mono uppercase tracking-widest text-indigo-600 dark:text-indigo-400 mb-2">03 — Experience</p>
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">经历</h2>
+        </div>
+
+        <ol class="relative border-l border-zinc-200 dark:border-zinc-800 ml-2 space-y-10">
+          <!-- TODO: 替换为你的第 1 条工作/项目经历 -->
+          <li class="ml-6">
+            <span class="absolute -left-[5px] mt-2 w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+              <h3 class="text-lg font-semibold tracking-tight">某科技公司</h3>
+              <span class="text-sm text-zinc-500 dark:text-zinc-400">前端开发实习生</span>
+            </div>
+            <p class="font-mono text-xs text-zinc-500 dark:text-zinc-400 mb-3">2024.06 — 2024.09</p>
+            <p class="text-zinc-600 dark:text-zinc-300 leading-relaxed">
+              参与 Web 后台系统的迭代开发，负责数据可视化模块的设计与实现，主导若干性能优化任务。
+            </p>
+          </li>
+
+          <!-- TODO: 替换为你的第 2 条经历（如教育/项目）-->
+          <li class="ml-6">
+            <span class="absolute -left-[5px] mt-2 w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+              <h3 class="text-lg font-semibold tracking-tight">某大学</h3>
+              <span class="text-sm text-zinc-500 dark:text-zinc-400">计算机科学与技术 · 本科</span>
+            </div>
+            <p class="font-mono text-xs text-zinc-500 dark:text-zinc-400 mb-3">2022.09 — 至今</p>
+            <p class="text-zinc-600 dark:text-zinc-300 leading-relaxed">
+              主修方向为软件工程与系统设计，活跃于 ACM/校内开发者社区，担任技术分享会的组织者之一。
+            </p>
+          </li>
+
+          <!-- TODO: 替换为你的第 3 条经历（如开源项目/比赛）-->
+          <li class="ml-6">
+            <span class="absolute -left-[5px] mt-2 w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+              <h3 class="text-lg font-semibold tracking-tight">开源项目 / 个人作品</h3>
+              <span class="text-sm text-zinc-500 dark:text-zinc-400">作者 · 维护者</span>
+            </div>
+            <p class="font-mono text-xs text-zinc-500 dark:text-zinc-400 mb-3">2023 — 至今</p>
+            <p class="text-zinc-600 dark:text-zinc-300 leading-relaxed">
+              在 GitHub 维护若干开源工具与小项目，持续更新中，欢迎在仓库里翻翻看。
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="py-24 border-t border-zinc-100 dark:border-zinc-900">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="mb-12">
+          <p class="text-xs font-mono uppercase tracking-widest text-indigo-600 dark:text-indigo-400 mb-2">04 — Contact</p>
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">联系我</h2>
+          <p class="mt-4 text-zinc-500 dark:text-zinc-400 max-w-2xl">想合作、交个朋友、或者纯粹来聊两句游戏，都欢迎通过下面任意一种方式找到我。</p>
+        </div>
+
+        <div class="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-2 sm:p-3">
+          <a
+            href="mailto:2664623@qq.com"
+            class="group flex items-center gap-4 px-4 sm:px-5 py-4 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
+          >
+            <span class="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-900 group-hover:bg-indigo-600 group-hover:text-white flex items-center justify-center transition-colors">
+              <i class="fa-regular fa-envelope"></i>
+            </span>
+            <div class="min-w-0 flex-1">
+              <p class="text-sm font-medium">Email</p>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 font-mono truncate">2664623@qq.com</p>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-400 group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors"></i>
+          </a>
+
+          <div class="h-px bg-zinc-100 dark:bg-zinc-900 mx-4"></div>
+
+          <a
+            href="https://github.com/XiChen211"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-4 px-4 sm:px-5 py-4 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
+          >
+            <span class="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-900 group-hover:bg-indigo-600 group-hover:text-white flex items-center justify-center transition-colors">
+              <i class="fa-brands fa-github"></i>
+            </span>
+            <div class="min-w-0 flex-1">
+              <p class="text-sm font-medium">GitHub</p>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 font-mono truncate">@XiChen211</p>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-400 group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors"></i>
+          </a>
+
+          <div class="h-px bg-zinc-100 dark:bg-zinc-900 mx-4"></div>
+
+          <!-- TODO: 替换或删除 — LinkedIn 链接（占位）-->
+          <a
+            href="#"
+            class="group flex items-center gap-4 px-4 sm:px-5 py-4 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
+          >
+            <span class="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-900 group-hover:bg-indigo-600 group-hover:text-white flex items-center justify-center transition-colors">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </span>
+            <div class="min-w-0 flex-1">
+              <p class="text-sm font-medium">LinkedIn</p>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 font-mono truncate">待添加</p>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-400 group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors"></i>
+          </a>
+
+          <div class="h-px bg-zinc-100 dark:bg-zinc-900 mx-4"></div>
+
+          <!-- TODO: 替换或删除 — Twitter/X 链接（占位）-->
+          <a
+            href="#"
+            class="group flex items-center gap-4 px-4 sm:px-5 py-4 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
+          >
+            <span class="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-900 group-hover:bg-indigo-600 group-hover:text-white flex items-center justify-center transition-colors">
+              <i class="fa-brands fa-x-twitter"></i>
+            </span>
+            <div class="min-w-0 flex-1">
+              <p class="text-sm font-medium">Twitter / X</p>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 font-mono truncate">待添加</p>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-400 group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="border-t border-zinc-100 dark:border-zinc-900">
+    <div class="max-w-4xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 dark:text-zinc-400 font-mono">
+      <p>&copy; <span id="year"></span> XiChen · Built with Tailwind</p>
+      <a href="#top" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors inline-flex items-center gap-1.5">
+        <i class="fa-solid fa-arrow-up text-[10px]"></i>
+        回到顶部
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Nav backdrop on scroll
+    const nav = document.getElementById('site-nav');
+    const onScroll = () => {
+      if (window.scrollY > 8) {
+        nav.classList.add('bg-white/80', 'dark:bg-zinc-950/80', 'backdrop-blur', 'border-b', 'border-zinc-100', 'dark:border-zinc-900');
+      } else {
+        nav.classList.remove('bg-white/80', 'dark:bg-zinc-950/80', 'backdrop-blur', 'border-b', 'border-zinc-100', 'dark:border-zinc-900');
+      }
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Theme toggle (light <-> dark, persists)
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
