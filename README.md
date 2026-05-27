@@ -1,56 +1,26 @@
-# XiChen — 个人主页
+# 吴晨帆｜个人主页
 
-零构建的个人网站：单文件 HTML + Tailwind CDN，部署在 GitHub Pages。
+这是部署在 GitHub Pages 上的个人主页，内容来自个人简历，并补充了华为光效滤镜项目介绍。
 
-## 本地预览
+## 页面内容
 
-直接双击 `index.html` 即可，或起一个本地服务器：
-
-```powershell
-cd d:\Projects\personal-site
-python -m http.server 8000
-# 浏览器打开 http://localhost:8000
-```
+- 个人概况与联系方式
+- 北京林业大学计算机科学与技术本科教育背景
+- 技能栈：Web 工程、AI 与数据、移动端视觉处理
+- 项目经历：华为光效滤镜、知识图谱问答、Mamba 联邦学习、MC/DC 覆盖测试系统等
+- 荣誉奖项
 
 ## 文件说明
 
 | 文件 | 用途 |
-|------|------|
-| `index.html` | 站点主文件，所有内容、样式、脚本都在这一个文件里 |
-| `favicon.svg` | 浏览器标签页图标（矢量，现代浏览器优先使用） |
-| `favicon.ico` | 旧浏览器与 Windows 兼容图标 |
-| `apple-touch-icon.png` | iOS 添加到主屏幕时使用的图标（180×180） |
-| `icon-192.png` / `icon-512.png` | Android / PWA 备用图标 |
-| `.nojekyll` | 告诉 GitHub Pages 跳过 Jekyll 处理 |
+| --- | --- |
+| `index.html` | 单页个人主页 |
+| `profile.jpeg` | 简历头像 |
+| `favicon.svg` / `favicon.ico` | 浏览器图标 |
+| `apple-touch-icon.png` / `icon-192.png` / `icon-512.png` | 移动端图标 |
+| `.github/workflows/pages.yml` | GitHub Pages 自动部署工作流 |
+| `.nojekyll` | 跳过 Jekyll 处理 |
 
-## 替换占位内容
+## 线上地址
 
-在 `index.html` 中搜索 `TODO:` 可以一次性定位所有需要你替换的位置：
-
-- 头像图片（目前是 "XC" 字母占位）
-- 职业一句话定位
-- "关于我" 三段介绍文案
-- 技能标签清单
-- 经历时间线的 3 条条目
-- LinkedIn / Twitter 链接（或删除整块）
-
-## 发布到 GitHub Pages
-
-1. 在 https://github.com/new 创建一个 **Public** 仓库
-   - 推荐仓库名：`XiChen211.github.io`（这样访问地址就是 `https://XiChen211.github.io/`）
-   - 或任意名（访问地址会带子路径）
-   - 不要勾选 "Add a README"
-2. 在本目录初始化并推送：
-   ```powershell
-   cd d:\Projects\personal-site
-   git init
-   git add .
-   git commit -m "Initial commit: personal site"
-   git branch -M main
-   git remote add origin https://github.com/XiChen211/<repo-name>.git
-   git push -u origin main
-   ```
-3. 仓库 → Settings → Pages
-   - Source：**Deploy from a branch**
-   - Branch：**main** / **/ (root)** → Save
-4. 等 1–2 分钟刷新，页面顶部会显示访问 URL。
+https://xichen211.github.io/
